@@ -1,2 +1,3 @@
 /target
-*.dll
+rustc_codegen_spirv.dll
+.cargo/config
