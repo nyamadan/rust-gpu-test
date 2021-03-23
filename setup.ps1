@@ -6,6 +6,8 @@ if (Test-Path .cargo\config) {
     Remove-Item .cargo\config | Out-Null
 }
 
+Copy-Item ".\rust-gpu\rust-toolchain" ".\rust-toolchain"
+
 Push-Location ".\rust-gpu\crates\rustc_codegen_spirv"
 cargo build --release
 Pop-Location
@@ -16,7 +18,8 @@ Copy-Item ".\rust-gpu\target\release\rustc_codegen_spirv.dll" ".\rustc_codegen_s
 target = "spirv-unknown-unknown"
 rustflags = [
    "-Zcodegen-backend={0}\\rustc_codegen_spirv.dll",
-   "-Zsymbol-mangling-version=v0"
+   "-Zsymbol-mangling-version=v0",
+   "-Ctarget-feature=+spirv1.0"
 ]
 
 [unstable]
