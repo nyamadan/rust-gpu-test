@@ -10,6 +10,6 @@ publish = false
 crate-type = ["dylib"]
 
 [dependencies]
+shared = { path = "./rust-gpu/examples/shaders/shared" }
 spirv-std-macros = { path = "./rust-gpu/crates/spirv-std-macros" }
 spirv-std = { path = "./rust-gpu/crates/spirv-std" }
-shared = { path = "./rust-gpu/examples/shaders/shared" }

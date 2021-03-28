@@ -1,3 +1,4 @@
 /target
+rust-toolchain
 rustc_codegen_spirv.dll
 .cargo/config
